@@ -8,11 +8,11 @@
   debug: msg="Master IP  {{ groups.master[0] }}"
 
 - name: print Master hostvars
-  debug: msg="Master Hostvars {{ hostvars[master] }}"
+  debug: msg="Master Hostvars {{ hostvars['master'] }}"
 
 - name: SET 2
   set_fact:
-    info_temp: "{{ hostvars[master]['master_status'] }}"
+    info_temp: "{{ hostvars['master']['master_status'] }}"
 
 - name: show
   debug: var=info_temp['Position']
