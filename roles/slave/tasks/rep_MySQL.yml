@@ -13,12 +13,15 @@
 - name: print groups
   debug: msg="{{groups}}"
 
+- name: print hostvars
+  debug: msg="{{hostvars}}"
+
 - name: print Master hostvars
-  debug: msg="Master Hostvars {{ hostvars['master'] }}"
+  debug: msg="Master Hostvars {{ hostvars[master] }}"
 
 - name: SET 2
   set_fact:
-    info_temp: "{{ hostvars['master']['master_status'] }}"
+    info_temp: "{{ hostvars[master]['master_status'] }}"
 
 - name: show
   debug: var=info_temp['Position']
