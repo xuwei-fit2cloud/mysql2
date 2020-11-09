@@ -1,0 +1,13 @@
+---
+
+- name: Get Mysql-master Status
+  mysql_replication: 
+    mode: getmaster
+    login_user: root
+    login_password: "{{ root_password }}" 
+    login_unix_socket: "{{ mysql_socket }}"
+  register: master_status
+  tags: master 
+
+  
+

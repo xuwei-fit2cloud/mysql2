@@ -1,0 +1,11 @@
+---
+- hosts: master
+  roles:
+    - role: master
+
+
+- hosts: slave
+  remote_user: root 
+  roles:
+    - role: slave 
+  tags: slave 
