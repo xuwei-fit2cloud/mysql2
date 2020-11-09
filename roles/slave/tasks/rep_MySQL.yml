@@ -23,9 +23,9 @@
 #- name: print Master hostvars
 #  debug: msg="Master Hostvars {{ hostvars[master] }}"
 
-#- name: SET 2
-#  set_fact:
-#    info_temp: "{{ hostvars[master]['master_status'] }}"
+- name: SET 2
+  set_fact:
+    info_temp: "{{ hostvars[masterid]['master_status'] }}"
 
-#- name: show
-#  debug: var=info_temp['Position']
+- name: show
+  debug: var=info_temp['Position']
