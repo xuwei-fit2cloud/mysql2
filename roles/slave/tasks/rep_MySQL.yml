@@ -6,22 +6,26 @@
 
 - name: print Master IP
   debug: msg="Master IP  {{ groups.master[0] }}"
-  
-- name: print play_hosts
-  debug: msg="{{play_hosts}}"
+    masterid: "{{ groups.master[0] }}"
 
-- name: print groups
-  debug: msg="{{groups}}"
+- name: print Master hostvars
+  debug: msg="Master hostvars  {{ hostvars[masterid] }}"
+  
+#- name: print play_hosts
+#  debug: msg="{{play_hosts}}"
+
+#- name: print groups
+#  debug: msg="{{groups}}"
 
 - name: print hostvars
   debug: msg="{{hostvars}}"
 
-- name: print Master hostvars
-  debug: msg="Master Hostvars {{ hostvars[master] }}"
+#- name: print Master hostvars
+#  debug: msg="Master Hostvars {{ hostvars[master] }}"
 
-- name: SET 2
-  set_fact:
-    info_temp: "{{ hostvars[master]['master_status'] }}"
+#- name: SET 2
+#  set_fact:
+#    info_temp: "{{ hostvars[master]['master_status'] }}"
 
-- name: show
-  debug: var=info_temp['Position']
+#- name: show
+#  debug: var=info_temp['Position']
