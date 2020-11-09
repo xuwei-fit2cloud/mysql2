@@ -2,10 +2,10 @@
 
 - name: Get Master IP
   set_fact:
-    master: "{{ groups.master[0] }}"
+    master: "{{ groups.master[0].ansible_default_ipv4.address }}"
 
 - name: print Master IP
-  debug: msg="Master IP  {{ groups.master[0] }}"
+  debug: msg="Master IP  {{ groups.master[0].ansible_default_ipv4.address }}"
   
 - name: print play_hosts
   debug: msg="{{play_hosts}}"
@@ -13,8 +13,8 @@
 - name: print groups
   debug: msg="{{groups}}"
 
-- name: print hostvars
-  debug: msg="{{hostvars}}"
+#- name: print hostvars
+#  debug: msg="{{hostvars}}"
 
 - name: print Master hostvars
   debug: msg="Master Hostvars {{ hostvars[master] }}"
