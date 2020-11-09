@@ -6,6 +6,12 @@
 
 - name: print Master IP
   debug: msg="Master IP  {{ groups.master[0] }}"
+  
+- name: print play_hosts
+  debug: msg="{{play_hosts}}"
+
+- name: print groups
+  debug: msg="{{groups}}"
 
 - name: print Master hostvars
   debug: msg="Master Hostvars {{ hostvars['master'] }}"
